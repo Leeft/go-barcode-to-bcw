@@ -44,6 +44,11 @@ jobs:
       run: |
         go get .
 
+    - name: Install dependencies pt2 
+      if: matrix.os == 'linux'
+      run: |
+        apt-get install libusb-1.0.0-dev
+        
     # - name: Run all tests recursively and verbosely
     #   run: TZ=UTC go test -v ./... 
     #   if: matrix.os == 'linux'
