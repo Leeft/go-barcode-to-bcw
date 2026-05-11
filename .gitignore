@@ -1,0 +1,4 @@
+example*.json
+*-barcodereader
+gotest
+cover.out
