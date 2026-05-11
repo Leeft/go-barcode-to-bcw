@@ -47,7 +47,7 @@ jobs:
     - name: Install dependencies pt2 
       if: matrix.os == 'linux'
       run: |
-        sudo apt install -y libusb-1.0.0-dev
+        sudo apt install -y libusb-1.0.0
         
     # - name: Run all tests recursively and verbosely
     #   run: TZ=UTC go test -v ./... 
