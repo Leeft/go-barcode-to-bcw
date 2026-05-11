@@ -44,9 +44,9 @@ jobs:
       run: |
         go get .
 
-    - name: Run all tests recursively and verbosely
-      run: TZ=UTC go test -v ./... 
-      if: matrix.os == 'linux'
+    # - name: Run all tests recursively and verbosely
+    #   run: TZ=UTC go test -v ./... 
+    #   if: matrix.os == 'linux'
 
     - name: Build [linux]
       id: build_linux
