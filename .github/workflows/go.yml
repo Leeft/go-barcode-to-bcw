@@ -17,7 +17,7 @@ permissions: {}
 jobs:
 
   build:
-    runs-on: [self-hosted,ubuntu-latest]
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       id-token: write
