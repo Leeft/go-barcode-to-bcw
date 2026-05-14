@@ -26,7 +26,7 @@ jobs:
     env:
       REGISTRY: index.docker.io
       IMAGE_NAME: ${{ github.repository }}
-      DOCKER_IMAGE: shiari/  go-barcode-to-bcw
+      DOCKER_IMAGE: shiari/go-barcode-to-bcw
     strategy:
       matrix:
         os: [linux]
@@ -69,7 +69,7 @@ jobs:
       if: matrix.os == 'linux'
       run: |
         CGO_ENABLED=1 GOOS=$os GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-s -w -X 'main.version=$(git describe --tags 2>/dev/null || echo build)'" -trimpath -o   go-barcode-to-bcw main.go
-        tar -I 'gzip -9' -cf   go-barcode-to-bcw-docker-amd64.tar.gz   go-barcode-to-bcw Dockerfile
+        tar -I 'gzip -9' -cf go-barcode-to-bcw-docker-amd64.tar.gz go-barcode-to-bcw Dockerfile
         rm go-barcode-to-bcw
         printf "sha256: %s\n" "$(shasum -a 256 go-barcode-to-bcw-docker-amd64.tar.gz)"
       env:
